@@ -1,0 +1,190 @@
+<div class="page-wrapper">
+    <!-- Contenido de la página -->
+    <div class="content container-fluid">
+
+        <!-- Encabezado de la página -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.adminDashboard">Dashboard </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Configuración</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Encabezado de la página -->
+
+        <div class="settings-menu-links">
+            <ul class="nav nav-tabs menu-tabs">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="routes.settings">Configuración General</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.localizationDetails">Localización</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.paymentSettings">Configuración de Pagos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.emailSettings">Configuración de Correo Electrónico</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.socialSettings">Inicio de Sesión con Redes Sociales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.socialLinks">Enlaces Sociales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.seoSettings">Configuración SEO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.themeSettings">Configuración del Tema</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.changePassword">Cambiar Contraseña</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.othersSettings">Otros</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Detalles Básicos del Sitio Web</h5>
+                    </div>
+                    <div class="card-body pt-0">
+                        <form>
+                            <div class="settings-form">
+                                <div class="form-group">
+                                    <label>Nombre del Sitio Web <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Ingrese el Nombre del Sitio Web">
+                                </div>
+                                <div class="form-group ">
+                                    <p class="settings-label">Logo <span class="star-red">*</span></p>
+                                    <div class="settings-btn">
+                                        <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" class="hide-input">
+                                        <label for="file" class="upload">
+                                            <i class="feather icon-upload upload-icon"></i>
+                                        </label>
+                                    </div>
+                                    <h6 class="settings-size">Tamaño recomendado de la imagen es <span>150px x 150px</span></h6>
+                                    <div class="upload-images" [ngClass]="{'d-none':deleteIcon2 === false}">
+                                        <img src="assets/img/logo-dark.png" alt="Imagen">
+                                        <a (click)="deleteIconFunc2()" href="javascript:void(0);" class="btn-icon logo-hide-btn">
+                                            <i class="feather icon-x-circle"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <p class="settings-label">Favicon <span class="star-red">*</span></p>
+                                    <div class="settings-btn">
+                                        <input type="file" accept="image/*" name="image" id="files" onchange="loadFile(event)" class="hide-input">
+                                        <label for="file" class="upload">
+                                            <i class="feather icon-upload upload-icon"></i>
+                                        </label>
+                                    </div>
+                                    <h6 class="settings-size">
+                                        Tamaño recomendado de la imagen es <span>16px x 16px o 32px x 32px</span>
+                                    </h6>
+                                    <h6 class="settings-size mt-1">Formatos aceptados: solo png e ico</h6>
+                                    <div class="upload-images upload-size" [ngClass]="{'d-none':deleteIcon1 === false}">
+                                        <img src="assets/img/favicon.png" alt="Imagen">
+                                        <a (click)="deleteIconFunc1()" href="javascript:void(0);" class="btn-icon logo-hide-btn">
+                                            <i class="feather icon-x-circle"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-6">
+                                        <div class="form-group">
+                                            <div class="status-toggle d-flex justify-content-between align-items-center">
+                                                <p class="mb-0">RTL</p>
+                                                <input type="checkbox" id="status_1" class="check">
+                                                <label for="status_1" class="checktoggle">checkbox</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="settings-btns">
+                                        <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Actualizar</button>&nbsp;&nbsp;
+                                        <button type="submit" class="btn btn-secondary btn-rounded">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Detalles de la Dirección</h5>
+                    </div>
+                    <div class="card-body pt-0">
+                        <form>
+                            <div class="settings-form">
+                                <div class="form-group">
+                                    <label>Línea de Dirección 1 <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Ingrese la Línea de Dirección 1">
+                                </div>
+                                <div class="form-group">
+                                    <label>Línea de Dirección 2 <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Ingrese la Línea de Dirección 2">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Ciudad <span class="star-red">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Estado/Provincia <span class="star-red">*</span></label>
+                                            <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select" placeholder="Seleccionar">
+                                                <mat-option *ngFor="let data of selectedList1" [value]="data.value">
+                                                {{data.value}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Código Postal <span class="star-red">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>País <span class="star-red">*</span></label>
+                                            <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select" placeholder="Seleccionar">
+                                                <mat-option *ngFor="let data of selectedList2" [value]="data.value">
+                                                {{data.value}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="settings-btns">
+                                        <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Actualizar</button>&nbsp;&nbsp;
+                                        <button type="submit" class="btn btn-secondary btn-rounded">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- /Contenido de la página -->
+</div>

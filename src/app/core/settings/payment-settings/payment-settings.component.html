@@ -1,0 +1,162 @@
+<div class="page-wrapper">
+    <!-- Contenido de la página -->
+    <div class="content container-fluid">
+
+        <!-- Encabezado de la página -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.adminDashboard">Panel de control </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Configuración</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Encabezado de la página -->
+
+        <div class="settings-menu-links">
+            <ul class="nav nav-tabs menu-tabs">
+                <li class="nav-item ">
+                    <a class="nav-link" [routerLink]="routes.settings">Configuración general</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.localizationDetails">Localización</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="routes.paymentSettings">Configuración de pagos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.emailSettings">Configuración de correo electrónico</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.socialSettings">Inicio de sesión con redes sociales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.socialLinks">Enlaces sociales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.seoSettings">Configuración de SEO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.themeSettings">Configuración de tema</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.changePassword">Cambiar contraseña</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.othersSettings">Otros</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title">Paypal</h5>
+                        <div class="status-toggle d-flex justify-content-between align-items-center">
+                            <input type="checkbox" id="status_1" class="check">
+                            <label for="status_1" class="checktoggle">activar/desactivar</label>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <form>
+                            <div class="settings-form">
+                                <div class="form-group">
+                                    <p class="pay-cont">Opción de Paypal</p>
+                                    <label class="custom_radio me-4">
+                                        <input type="radio" name="budget" value="Yes" checked="">
+                                        <span class="checkmark"></span> Sandbox
+                                    </label>
+                                    <label class="custom_radio">
+                                        <input type="radio" name="budget" value="Yes">
+                                        <span class="checkmark"></span> En vivo
+                                    </label>
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label>Clave de tokenización de Braintree <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="sandbox_pgjcppvs_pd6gznv7zbrx9hb8">
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label>ID del comerciante de Braintree <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="pd6gznv7zbrx9hb8">
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label>Clave pública de Braintree <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="h8bydrz7gcjkp7d4">
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label>Clave privada de Braintree <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="sandbox_pgjcppvs_pd6gznv7zbrx9hb8">
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label>ID de la aplicación Paypal <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="pd6gznv7zbrx9hb8">
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label>Clave secreta de Paypal <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="h8bydrz7gcjkp7d4">
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="settings-btns">
+                                        <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Guardar</button>&nbsp;&nbsp;
+                                        <button type="submit" class="btn btn-secondary btn-rounded">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title">Stripe</h5>
+                        <div class="status-toggle d-flex justify-content-between align-items-center">
+                            <input type="checkbox" id="status_2" class="check" checked="">
+                            <label for="status_2" class="checktoggle">activar/desactivar</label>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <form>
+                            <div class="settings-form">
+                                <div class="form-group">
+                                    <p class="pay-cont">Opción de Stripe</p>
+                                    <label class="custom_radio me-4">
+                                        <input type="radio" name="budget" value="Yes" checked="">
+                                        <span class="checkmark"></span> Sandbox
+                                    </label>
+                                    <label class="custom_radio">
+                                        <input type="radio" name="budget" value="Yes">
+                                        <span class="checkmark"></span> En vivo
+                                    </label>
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label>Nombre del gateway <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="Stripe">
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label>Clave API <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="pk_test_AealxxOygZz84AruCGadWvUV00mJQZdLvr">
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label>Clave REST <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control" placeholder="sk_test_8HwqAWwBd4C4E77bgAO1jUgk00hDlERgn3">
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="settings-btns">
+                                        <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Guardar</button>&nbsp;&nbsp;
+                                        <button type="submit" class="btn btn-secondary btn-rounded">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Contenido de la página -->
+</div>
